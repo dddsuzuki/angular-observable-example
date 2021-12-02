@@ -43,7 +43,7 @@ export class AppComponent {
   testFinalize(): void {
     console.log('subscribe');
     this.apiService
-      .fetchError()
+      .fetch()
       .pipe(
         finalize(() => {
           console.log('finalize');
