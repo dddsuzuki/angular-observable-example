@@ -8,3 +8,22 @@ td {
 td {
   padding: 1rem;
 }
+
+.layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.logs {
+  position: relative;
+  margin-left: 1rem;
+  padding: 1rem;
+  width: 200px;
+  background: #eee;
+}
+
+.clear {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}

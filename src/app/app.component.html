@@ -1,43 +1,54 @@
-<table>
-  <tr>
-    <td></td>
-    <td>success</td>
-    <td>error</td>
-  </tr>
-  <tr>
-    <td>subscribe</td>
-    <td>
-      <button type="button" (click)="testSubscribe()">test</button>
-    </td>
-    <td>
-      <button type="button" (click)="testSubscribeError()">test</button>
-    </td>
-  </tr>
-  <tr>
-    <td>finalize</td>
-    <td>
-      <button type="button" (click)="testFinalize()">test</button>
-    </td>
-    <td>
-      <button type="button" (click)="testFinalizeError()">test</button>
-    </td>
-  </tr>
-  <tr>
-    <td>add</td>
-    <td>
-      <button type="button" (click)="testAdd()">test</button>
-    </td>
-    <td>
-      <button type="button" (click)="testAddError()">test</button>
-    </td>
-  </tr>
-  <tr>
-    <td>finalize and add</td>
-    <td>
-      <button type="button" (click)="testFinalizeAndAdd()">test</button>
-    </td>
-    <td>
-      <button type="button" (click)="testFinalizeAndAddError()">test</button>
-    </td>
-  </tr>
-</table>
+<div class="layout">
+  <table>
+    <tr>
+      <td></td>
+      <td>success</td>
+      <td>error</td>
+    </tr>
+    <tr>
+      <td>subscribe</td>
+      <td>
+        <button type="button" (click)="testSubscribe()">test</button>
+      </td>
+      <td>
+        <button type="button" (click)="testSubscribeError()">test</button>
+      </td>
+    </tr>
+    <tr>
+      <td>finalize</td>
+      <td>
+        <button type="button" (click)="testFinalize()">test</button>
+      </td>
+      <td>
+        <button type="button" (click)="testFinalizeError()">test</button>
+      </td>
+    </tr>
+    <tr>
+      <td>add</td>
+      <td>
+        <button type="button" (click)="testAdd()">test</button>
+      </td>
+      <td>
+        <button type="button" (click)="testAddError()">test</button>
+      </td>
+    </tr>
+    <tr>
+      <td>finalize and add</td>
+      <td>
+        <button type="button" (click)="testFinalizeAndAdd()">test</button>
+      </td>
+      <td>
+        <button type="button" (click)="testFinalizeAndAddError()">test</button>
+      </td>
+    </tr>
+  </table>
+
+  <ng-container *ngIf="logs$ | async as logs">
+    <div class="logs">
+      <button type="button" class="clear" (click)="clearLogs()">clear</button>
+      <div *ngFor="let log of logs">
+        {{ log.message }}
+      </div>
+    </div>
+  </ng-container>
+</div>
